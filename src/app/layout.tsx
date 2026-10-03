@@ -38,8 +38,18 @@ export async function generateMetadata(): Promise<Metadata> {
     // 탭 아이콘 (v2.0 사용자 요청) — 지정했으면 기본 favicon.ico 대신 그것을 쓴다.
     // 지정이 없으면 icons를 아예 넣지 않아 Next의 기본 파일 처리를 그대로 둔다
     ...(favicon ? { icons: { icon: favicon } } : {}),
-    openGraph: { title, description, type: 'website' },
-    twitter: { card: 'summary', title, description },
+openGraph: {
+  title,
+  description,
+  type: 'website',
+  images: ['/neongreenicon.png'],
+},
+twitter: {
+  card: 'summary',
+  title,
+  description,
+  images: ['/neongreenicon.png'],
+},
   };
 }
 
